@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Game from "./components/game/Game";
+import Cheeta from "./components/img/Cheetas.png";
+import Cat from "./components/img/Tom.png";
+import Fox from "./components/img/Fox.jpg";
+import Lion from "./components/img/Lions.png";
 
-function App() {
+function App(props) {
+  const Cheetas = {
+    name: "Fast Cheetas",
+    logoSrc: Cheeta,
+  };
+
+  const tom = {
+    name: "Sleepy Tom",
+    logoSrc: Cat,
+  };
+
+  const fox = {
+    name: "Clever Fox",
+    logoSrc: Fox,
+  };
+
+  const lions = {
+    name: "The Lions",
+    logoSrc: Lion,
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Game venue="Cold Fires" homeTeam={tom} visitingTeam={Cheetas} />
+      <Game venue="Siberian Tigers" homeTeam={fox} visitingTeam={lions} />
     </div>
   );
 }
